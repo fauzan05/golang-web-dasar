@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+</head>
+<body>
+    {{if and .Name .Address.Country}}
+    <h2>Hello {{.Name}}</h2>
+    <h2>My Country is in {{.Address.Country}}</h2>
+    {{else if .Address.Country}}
+    <h2>Nama kosong, hanya ada alamat saja {{ .Address.Country }}</h2>
+    {{else}}
+    <h2>Semua datanya kosong</h2>
+    {{end}}
+</body>
+</html>

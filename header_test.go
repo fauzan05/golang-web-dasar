@@ -8,7 +8,7 @@ import (
 	"testing"
 )
 
-const localhost string = "http://localhost:8080"
+const Localhost string = "http://localhost:8080"
 
 func RequestHeader(writer http.ResponseWriter, request *http.Request) {
 	contentType := request.Header.Get("content-type")
@@ -21,7 +21,7 @@ func ResponseHeader(writer http.ResponseWriter, request *http.Request) {
 }
 
 func TestRequestHeader(t *testing.T) {
-	request := httptest.NewRequest("GET", localhost + "/home", nil)
+	request := httptest.NewRequest("GET", Localhost + "/home", nil)
 	request.Header.Add("content-type", "makanan") // menambahkan data header pada request ke server
 	recorder := httptest.NewRecorder()
 
@@ -33,7 +33,7 @@ func TestRequestHeader(t *testing.T) {
 }
 
 func TestResponseHeader(t *testing.T) {
-	request := httptest.NewRequest("GET", localhost + "/home", nil)
+	request := httptest.NewRequest("GET", Localhost + "/home", nil)
 	recorder := httptest.NewRecorder()
 
 	ResponseHeader(recorder, request)
